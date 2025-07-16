@@ -13,6 +13,10 @@ app.use(cors())
 // static file access 
 app.use("/uploads",express.static('uploads'))
 
+//login/register routes
+const userAuth = require('./routes/loginRoute')
+app.use('/user/Auth',userAuth)
+
 
 // mongoose connection to the db 
 mongoose.connect(process.env.MONGO_URI)
