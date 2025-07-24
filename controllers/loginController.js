@@ -50,7 +50,7 @@ exports.login = async (req,res)=>{
     const token = jwt.sign(
         {userId:user._id,role:user.role},
         process.env.JWT_SECRET,
-        {expiresIn:"1h"}
+        {expiresIn:"7d"} // token will expire in 7 days
     )
     res.json({message:"login sucessful",
         token,

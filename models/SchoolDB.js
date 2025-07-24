@@ -53,7 +53,7 @@ const studentSchema = new Schema(
     dateOfBirth: { type: Date, required: true },
     gender: { type: String },
     photo: { type: String },
-    admissionNumber: { type: String },
+    addmissionNumber: { type: String },
     classroom: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Classroom",
