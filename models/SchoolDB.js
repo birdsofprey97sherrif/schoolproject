@@ -1,5 +1,4 @@
 const mongoose =require('mongoose')
-const { type } = require('os')
 const Schema = mongoose.Schema
 
 // define user schema 
@@ -10,7 +9,7 @@ const userSchema = new Schema({
     isActive:{type:Boolean,default:true},
     role:{type:String,enum:['admin','teacher','parent'],required:true},
     teacher:{type:mongoose.Schema.Types.ObjectId,ref:'Teacher',default:null},
-    parent:{type:mongoose.Schema.Types.ObjectId,ref:'parent',default:null}
+    parent:{type:mongoose.Schema.Types.ObjectId,ref:'Parent',default:null}
 },{timestamps:true})
 
 // teachers schema
@@ -41,7 +40,7 @@ const classroomSchema = new Schema(
       ref: "Teacher",
       default: null,
     },
-    students: [{ type: mongoose.Schema.Types.ObjectId, ref: "Teacher", default: null }],
+    students: [{ type: mongoose.Schema.Types.ObjectId, ref: "Student" }],
   },
   { timestamps: true }
 );
